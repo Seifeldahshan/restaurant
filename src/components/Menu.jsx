@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const menuItems = [
   {
@@ -29,7 +30,7 @@ const menuItems = [
 
 ];
 
-const Menu = () => {
+const Menu = ({ showButton = true }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
 
@@ -73,16 +74,18 @@ const Menu = () => {
           ))}
         </div>
 
-        <motion.div
-          className="menu-center-btn"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
-          <a href="#" className="btn-primary">
-            View Full Menu
-          </a>
-        </motion.div>
+        {showButton && (
+          <motion.div
+            className="menu-center-btn"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            <Link to="/menus" className="btn-primary">
+              View Full Menu
+            </Link>
+          </motion.div>
+        )}
       </div>
     </section>
   );

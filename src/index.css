@@ -412,7 +412,7 @@ img {
    MENU SECTION
    ============================================ */
 .menu-section {
-  padding: 100px 0;
+  padding: 200px 0;
   background-color: #9b1919;
   position: relative;
   overflow: hidden;
@@ -1053,9 +1053,82 @@ img {
 }
 
 /* ============================================
+   MOBILE OVERLAY NAV DEFAULT
+   ============================================ */
+.mobile-nav {
+  display: none;
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .site-header {
+    width: 95%;
+  }
+
+  .header-inner {
+    padding: 0 20px;
+  }
+
+  .left-nav {
+    margin-right: 0;
+  }
+
+  .right-nav {
+    margin-left: 0;
+  }
+
+  .nav-dot {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 26, 26, 0.98);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    z-index: 1000;
+  }
+
+  .mobile-nav.open {
+    display: flex;
+  }
+
+  .mobile-nav a {
+    font-size: 18px;
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+
+  .mobile-nav a.active,
+  .mobile-nav a:hover {
+    color: var(--color-primary);
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .hero-title {
+    font-size: 65px;
+  }
+
   .welcome-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1073,43 +1146,8 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .footer-main {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-contact-card {
-    margin-top: 30px;
-  }
-
-  .header-nav {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(26, 26, 26, 0.98);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    z-index: 1000;
-  }
-
-  .header-nav.open {
-    display: flex;
-  }
-
-  .header-nav a {
-    font-size: 18px;
-  }
-
-  .mobile-toggle {
-    display: flex;
-  }
-
-  .hero-title {
-    font-size: 48px;
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .slick-prev {
@@ -1121,9 +1159,9 @@ img {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .hero-title {
-    font-size: 36px;
+    font-size: 45px;
   }
 
   .hero-desc {
@@ -1136,30 +1174,42 @@ img {
   .testimonials-section .section-title,
   .gallery-section .section-title,
   .cta-section h2 {
-    font-size: 30px;
+    font-size: 32px;
   }
 
   .chefs-grid {
     grid-template-columns: 1fr;
   }
 
-  .menu-item {
+  .menu-item.card-style,
+  .menu-item.card-style:nth-child(even) {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 30px;
   }
 
-  .menu-item-header {
-    flex-direction: column;
+  .menu-item.card-style .menu-item-header,
+  .menu-item.card-style:nth-child(even) .menu-item-header {
     align-items: center;
+  }
+
+  .menu-item-img {
+    margin: 0 auto;
   }
 
   .menu-item-dots {
     display: none;
   }
 
-  .footer-contact-card {
-    padding: 30px;
+  .menu-item-desc {
+    max-width: 100%;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 60px 0 40px;
   }
 
   .welcome-images {
@@ -1167,16 +1217,33 @@ img {
   }
 
   .welcome-img-main {
-    width: 55%;
-  }
-
-  .welcome-img-secondary {
-    width: 55%;
+    width: 80%;
   }
 
   .hero-decor-left,
-  .hero-decor-right {
+  .hero-decor-right,
+  .welcome-decor,
+  .menu-decor-left,
+  .menu-decor-right,
+  .cta-decor {
     display: none;
+  }
+
+  .testimonial-card {
+    padding: 20px;
+  }
+
+  .testimonial-text {
+    font-size: 18px;
+  }
+
+  .logo-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .gallery-image img {
+    width: 100%;
   }
 }
 
