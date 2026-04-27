@@ -24,7 +24,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-col brand-col">
-            <h2 className="footer-brand">XTRA</h2>
+            <h2 className="footer-brand">Alex Top</h2>
             <p className="footer-tagline">
               A premium culinary experience blending modern gastronomy with classic flavors.
             </p>
@@ -58,13 +58,13 @@ const Footer = () => {
             <ul className="footer-list">
               <li><i className="fas fa-map-marker-alt"></i> 123 Culinary Blvd, NY</li>
               <li><i className="fas fa-phone"></i> +1 (555) 123-4567</li>
-              <li><i className="fas fa-envelope"></i> reservas@xtra.com</li>
+              <li><i className="fas fa-envelope"></i> hello@alextop.com</li>
             </ul>
           </div>
         </div>
 
         <div className="footer-bottom-bar">
-           <p>© {new Date().getFullYear()} XTRA Restaurant. All Rights Reserved.</p>
+           <p>© {new Date().getFullYear()} Alex Top. All Rights Reserved.</p>
         </div>
       </div>
 

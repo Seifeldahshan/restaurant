@@ -17,7 +17,7 @@ const Gallery = () => {
           <h2 className="section-title">OUR GALLERY</h2>
           <p className="section-desc">
             See a custom set of pictures that we curated for you to get a little
-            more familiar with XTRA Restaurant inner design and foods we serve.
+            more familiar with Alex Top inner design and foods we serve.
           </p>
         </motion.div>
 

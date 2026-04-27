@@ -64,7 +64,7 @@ const Welcome = () => {
               Culinary Delight
             </h2>
             <p>
-              At XTRA Restaurant, we believe that dining is not just about
+              At Alex Top, we believe that dining is not just about
               food—it's about the entire experience. From the moment you step
               through our doors, you'll be enveloped in an atmosphere of warmth,
               elegance, and culinary artistry.

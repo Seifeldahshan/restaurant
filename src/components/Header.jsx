@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import logo from '../assets/restaurant-logo.png';
+import logo from '../assets/alex_top_logo.png';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -15,8 +15,8 @@ const Header = () => {
   }, []);
 
   const leftLinks = [
-    { label: 'HOME', href: '#hero' },
-    { label: 'MENUS', href: '#menu' },
+    { label: 'HOME', href: '/' },
+    { label: 'MENUS', href: '/menu' },
     { label: 'ORDER', href: '#order' },
   ];
 
@@ -34,12 +34,11 @@ const Header = () => {
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
       <div className="header-inner">
-        <nav className={`header-nav left-nav ${menuOpen ? 'open' : ''}`}>
+        <nav className="header-nav left-nav desktop-only">
           {leftLinks.map((link, i) => (
             <div key={link.label} className="nav-item">
               <motion.a
                 href={link.href}
-                onClick={() => setMenuOpen(false)}
                 className={link.label === 'HOME' ? 'active' : ''}
               >
                 {link.label}
@@ -53,23 +52,38 @@ const Header = () => {
           <div className="logo-circle">
             <img
               src={logo}
-              alt="XTRA Restaurant Logo"
+              alt="Alex Top Logo"
             />
           </div>
         </a>
 
-        <nav className={`header-nav right-nav ${menuOpen ? 'open' : ''}`}>
+        <nav className="header-nav right-nav desktop-only">
           {rightLinks.map((link, i) => (
             <div key={link.label} className="nav-item">
               <motion.a
                 href={link.href}
-                onClick={() => setMenuOpen(false)}
               >
                 {link.label}
               </motion.a>
               {i < rightLinks.length - 1 && <span className="nav-dot">•</span>}
             </div>
           ))}
+        </nav>
+
+        {/* Mobile Unified Nav */}
+        <nav className={`mobile-nav-overlay ${menuOpen ? 'open' : ''}`}>
+          <div className="mobile-nav-content">
+            {[...leftLinks, ...rightLinks].map((link) => (
+              <motion.a
+                key={link.label}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="mobile-nav-link"
+              >
+                {link.label}
+              </motion.a>
+            ))}
+          </div>
         </nav>
 
         <div
